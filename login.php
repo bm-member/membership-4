@@ -1,5 +1,5 @@
 <?php 
-
+include './init.php';
 include 'db.php';
 
 $name = $_POST['name'] ?? '';
@@ -10,13 +10,13 @@ if(!empty($name) && !empty($password)) {
     $result =  mysqli_query($conn, $sql);
 
     if(mysqli_num_rows($result) > 0) {
-        echo 'Login Success.';
+        $_SESSION['auth'] = true;
+        header('location: home.php');
     }
-    
-    die();
 
+    echo "Login Fail.";
 }
 
-echo "Login Fail.";
+header('location: login_form.php');
 
 

@@ -1,22 +1,14 @@
-<?php include "./header.php" ?>
+<?php 
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+include './init.php';
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="./login_form.php">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./register_form.php">Register</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+include "./header.php";
 
-<?php  include './footer.php';  ?>
+include "./navbar.php";
+?>
+
+<div class="alert alert-success mt-5" role="alert">
+  A simple success alert—check it out!
+</div>
+
+<?php include './footer.php'; ?>

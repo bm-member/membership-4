@@ -1,4 +1,16 @@
-<?php include "./header.php" ?>
+<?php 
+
+include './init.php';
+
+
+if(isset($_SESSION['auth']) && $_SESSION['auth']) {
+    header('location: home.php');
+}
+
+include "./header.php";
+include "./navbar.php";
+
+?>
 
 <div class="container mt-5">
     <div class="row justify-content-center">

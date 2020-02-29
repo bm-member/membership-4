@@ -1,5 +1,11 @@
 <?php 
 
+include "./init.php";
+
+if($_SESSION['auth']) {
+    header('location: home.php');
+}
+
 include 'db.php';
 
 $name = $_POST['name'] ?? ''; // isset($_POST['name']) ? $_POST['name'] : ''
@@ -11,12 +17,15 @@ if(!empty($name) && !empty($password)) {
     $result =  mysqli_query($conn, $sql);
     
     if(mysqli_insert_id($conn) > 0) {
-        echo "Registerated Success.";
-        exit();
+        $_SESSION['auth'] = true;
+        $_SESSION['msg'] = 'Registrated Success.';
+        header('location: home.php');
     }
 
+    echo "Registeration Fail.";
 }
 
-echo "Registeration Fail.";
+header('location: register_form.php');
+
 
 
