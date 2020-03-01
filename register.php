@@ -6,7 +6,7 @@ if($_SESSION['auth']) {
     header('location: home.php');
 }
 
-include 'db.php';
+
 
 $name = $_POST['name'] ?? ''; // isset($_POST['name']) ? $_POST['name'] : ''
 $password = $_POST['password'] ?? '';

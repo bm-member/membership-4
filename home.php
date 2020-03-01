@@ -7,24 +7,31 @@ if($_SESSION['auth'] == false) {
 }
 
 
-include "./header.php"; 
-include "./navbar.php";
+include "./layouts/header.php"; 
+include "./layouts/navbar.php";
 
 
 ?>
 
-<?php if(isset($_SESSION['msg'])): ?>
 
-<div class="alert alert-success" role="alert">
-  <?php 
-  echo $_SESSION['msg']; 
-  unset($_SESSION['msg']);
-  ?>
+
+
+<div class="container">
+  <div class="col-12">
+
+  <?php if(isset($_SESSION['msg'])): ?>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <?php echo $_SESSION['msg']; unset($_SESSION['msg']); ?>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+  <?php endif; ?>
+
+    <h1>Welcome to our home page.</h1>
+  </div>
 </div>
 
-<?php endif; ?>
-
-
-<h1>Welcome to our home page.</h1>
-
-<?php include './footer.php'; ?>
+<?php include './layouts/footer.php'; ?>

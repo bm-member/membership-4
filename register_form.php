@@ -6,8 +6,8 @@ if(isset($_SESSION['auth']) && $_SESSION['auth']) {
     header('location: home.php');
 }
 
-include "./header.php"; 
-include "./navbar.php";
+include "./layouts/header.php"; 
+include "./layouts/navbar.php";
 ?>
 
 <div class="container mt-5">
@@ -30,4 +30,4 @@ include "./navbar.php";
     </div>
 </div>
 
-<?php  include './footer.php';  ?>
+<?php include './layouts/footer.php'; ?>
